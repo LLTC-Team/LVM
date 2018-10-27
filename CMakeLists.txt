@@ -4,6 +4,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(ThirdParty/Catch2)
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+
 # force Unicode over Multi-byte
 if(COMPILER_MSVC)
     add_definitions(-DUNICODE -D_UNICODE)
