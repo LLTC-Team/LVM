@@ -21,7 +21,7 @@ target_link_libraries(LVM Threads::Threads ${CMAKE_DL_LIBS})
 add_subdirectory(TestLib)
 
 add_executable(LVM_TEST Tests/Tests.cpp)
-target_link_libraries(LVM_TEST CATCH2 LVM)
+target_link_libraries(LVM_TEST Catch2 LVM)
 
 add_executable(LVM_EXE main.cpp)
 target_link_libraries(LVM_EXE LVM)
