@@ -2,6 +2,8 @@ project(LVM)
 cmake_minimum_required(VERSION 3.11)
 set(CMAKE_CXX_STANDARD 17)
 
+add_subdirectory(ThirdParty/Catch2)
+
 # force Unicode over Multi-byte
 if(COMPILER_MSVC)
     add_definitions(-DUNICODE -D_UNICODE)
@@ -15,9 +17,8 @@ target_link_libraries(LVM Threads::Threads ${CMAKE_DL_LIBS})
 # TODO: Remove TestLib to LCC
 add_subdirectory(TestLib)
 
-# TODO: Include CATCH
 add_executable(LVM_TEST Tests/Tests.cpp)
-target_link_libraries(LVM_TEST CATCH LVM)
+target_link_libraries(LVM_TEST CATCH2 LVM)
 
 add_executable(LVM_EXE main.cpp)
 target_link_libraries(LVM_EXE LVM)
