@@ -11,3 +11,6 @@ CTestTestfile.cmake
 # JetBrains IDE files
 .idea
 cmake-build-debug
+
+# Console Using
+/build
